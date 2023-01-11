@@ -1,0 +1,12 @@
+version: '1.0'
+services:
+  web:
+    container_name: flask-verify-password-graphql
+    build: .
+    command: flask run --host0.0.0.0
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env

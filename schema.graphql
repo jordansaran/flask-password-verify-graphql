@@ -1,0 +1,17 @@
+input RuleInput {
+    rule: String!
+    value: Int!
+}
+
+type VerifyResult {
+    verify: Boolean!
+    noMatch: [String]!
+}
+
+type Query {
+    verify(password: String!, rules: [RuleInput!]): VerifyResult!
+}
+
+schema {
+    query: Query
+}
